@@ -5,8 +5,8 @@
     <title>[DA] - Requerimentos de Membros</title>
     <link
       rel="icon"
-      href="https://www.habbo.com.br/habbo-imaging/badge/b09154s43067s50134s17115s17113befaf2eadf28bb2e257d8c15d36dbf43.gif"
-    />
+      href=""
+    />https://www.habbo.com.br/habbo-imaging/badge/b09154s43067s50134s17115s17113befaf2eadf28bb2e257d8c15d36dbf43.gif
     <link rel="stylesheet" href="css.css" />
     <meta name="viewport" content="width=device-width, initial-scales=1.0" />
     <link
@@ -793,9 +793,9 @@
 
                     <option value="entrada_postagem">Entrada de membros</option>
                     <option value="reintegração_membros">Reintegração de membros</option>
-                    <option value="licença_pedido">Pedido de licença ou reserva</option>
-                    <option value="licença_retorno">Retorno de licença ou reserva</option>
-                    <option value="mudança_cargo">Promoção - Rebaixamento</option>
+                    <option value="licença_pedido">Pedido de licença/Reserva</option>
+                    <option value="licença_retorno">Retorno de licença/Reserva</option>
+                    <option value="mudança_cargo">Promoção/Rebaixamento</option>
                     <option value="adv_postagem">Advertência Interna</option>
                     <option value="saída_autopostagem">Saída do Departamento</option>
                     <option value="expulsão_postagem">Expulsão do Departamento</option>
@@ -882,7 +882,7 @@
         </div>
 
         <div class="card" id="licença_pedido">
-            <div class="tittle">PEDIDO DE LICENÇA OU RESERVA</div>
+            <div class="tittle">PEDIDO DE LICENÇA / RESERVA</div>
             <form id="pedido_licence" action="#" onsubmit="fill_license(event)">
             <input type="text" name="horario_envio_lic" id="horario_envio_lic" style="display: none;">
                 <div class="details">
@@ -906,7 +906,7 @@
     </div>
            
     <div class="card" id="licença_retorno">
-            <div class="tittle">RETORNO DE LICENÇA OU RESERVA</div>
+            <div class="tittle">RETORNO DE LICENÇA / RESERVA</div>
             <form id="licença_ret" action="#" onsubmit="fill_retornos(event)">
             <input type="text" name="horario_envio_ret" id="horario_envio_ret" style="display: none;">
                 <div class="details">
@@ -1683,11 +1683,10 @@ if(document.getElementById("confirmar_attlist").checked == false){isValid = fals
   if(isValid == true){
       $('#enviar_attlist').val('Enviando... Aguarde!').prop("disabled",true);
       
-      var texto = '[table class="rank attprof" style="border: none!important; margin: 1em; line-height: 1.4em;"][tr style="border: none;"][td style="border: none!important;"][url=https://servimg.com/view/20441089/122][img]https://i.servimg.com/u/f24/20/44/10/89/b0920410.gif[/img][/url]\n' +
-'[font=Poppins][size=15][color=white][b][CDC] Atualização Realizada [' + $('#attlist_tag').val() + '][/b][/color][/size][color=white]\n' +
-'Em virtude da Comissão de Desenvolvimento Cultural, foi realizada uma atualização neste horário.\n' +
-'Em caso de erros, consulte o(a) responsável pela atualização.\n\n' +
-'[b]#ConectandoProfessores #CompartilhandoMomentos[/b][/color][/font][/td][/tr][/table]';
+      var texto = '[table class="rank ins" style="border: none!important; margin: 1em; line-height: 1.4em;" bgcolor="#191970"][tr style="border: none;"][td style="border: none!important;"][b][font=Poppins][size=15]ATUALIZAÇÃO REALIZADA [' + $('#attlist_tag').val() + '] ✓[/size][/font][/b]\n' +
+'[img]https://www.habbo.com.br/habbo-imaging/badge/b09154s17115s17113s50134s43067e45ff8a8269c270ea3881ab99fc3d29a.gif[/img]\n\n' +
+'[size=13][color=#ffffff][font=Poppins]Foi realizada uma atualização neste horário, em caso de erros, consulte a liderança do Departamento de Aplicação![/font][/color][/size][/td][/tr][/table]';
+
 
 
       $('#fa-generated-message').val(texto);}
