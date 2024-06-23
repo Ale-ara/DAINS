@@ -975,6 +975,11 @@
                         <span class="details_span">Nickname do Membro</span>
                         <input id="nickname_saída" name="nickname_saída" type="text" placeholder="Nickname do membro saindo do departamento." required>                 
                     </div>
+
+                    <div class="input-box" style="width: 100%;" id="saida_perm">
+                    <span class="details_span">Permissão</span>
+                    <input id="permissão_saída" name="permissão_saída" type="text" placeholder="Nickname do membro que concedeu a permissão" required>                 
+                </div>
                 
                     <div class="check-box">
                         <input id="confirmar_saida" name="confirmar_saida" type="checkbox" value= null onchange="ValidaCheckBox('confirmar_saida')">     
@@ -1112,18 +1117,18 @@
                         <span class="details_span">Antigo cargo</span>
                         <select name="min_atual" id="min_atual">
                             <option value="" disabled selected>Selecione o atual cargo</option>
-                            <option value="1">Analista</option>
-                    <option value="2">Docente</option>
-                    <option value="3">Arquiteto</option>
+                            <option value="1">Aplicador</option>
+                            <option value="2">Vice-Líder</option>
+                            <option value="3">Líder</option>
                         </select>
                     </div>
                     <div class="input-box">
                         <span class="details_span">Novo cargo</span>
                         <select name="min_novo" id="min_novo">
                             <option value="" disabled selected>Selecione o novo cargo</option>
-                            <option value="1">Analista</option>
-                            <option value="2">Docente</option>
-                            <option value="3">Arquiteto</option>
+                            <option value="1">Aplicador</option>
+                            <option value="2">Vice-Líder</option>
+                            <option value="3">Líder</option>
                         </select>
                     </div>
                     <div class="button">
@@ -1240,13 +1245,13 @@ function retornaDateTime(id){
 }
  
 function retornaCargo(value){
-    var cargos = ['Analista', 'Docente', 'Arquiteto', 'Secretário de Relações Sociais', 'Secretário de Educação', 'Vice-diretor', 'Diretor'];
+    var cargos = ['Aplicador', 'Vice-Líder', 'Líder'];
     return cargos[parseInt(value) - 1];
 }
 
  
 function retornaMin(value){
-  var remin = ['Analista', 'Docente', 'Arquiteto', 'Secretário de Relações Sociais', 'Secretário de Educação'];
+  var remin = ['Aplicador', 'Vice-Líder', 'Líder'];
     return remin[parseInt(value) - 1];
 }
  
@@ -1282,7 +1287,7 @@ function fill_entradas(e) {
       var necessidade;
       switch ($('#necessidade_novos').val()) {
           case "1":
-              necessidade = "Analista";
+              necessidade = "Aplicador";
               break;
           case "2":
               necessidade = "Docente";
