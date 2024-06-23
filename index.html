@@ -1,3 +1,4 @@
+
 <html lang="pt-br" dir="ltr">
   <head>
     <meta charset="UTF-8" />
@@ -794,8 +795,8 @@
 
                     <option value="entrada_postagem">Entrada de membros</option>
                     <option value="reintegração_membros">Reintegração de membros</option>
-                    <option value="licença_pedido">Pedido de Licença/Reserva</option>
-                    <option value="licença_retorno">Retorno de Licença/Reserva</option>
+                    <option value="licença_pedido">Pedido de licença/Reserva</option>
+                    <option value="licença_retorno">Retorno de licença/Reserva</option>
                     <option value="mudança_cargo">Promoção/Rebaixamento</option>
                     <option value="adv_postagem">Advertência Interna</option>
                     <option value="saída_autopostagem">Saída do Departamento</option>
@@ -923,7 +924,7 @@
         </div>
 
         <div class="card" id="mudança_cargo">
-            <div class="tittle">PROMOÇÃO / REBAIXAMENTO</div>
+            <div class="tittle">PROMOÇÃO - REBAIXAMENTO</div>
             <form id="change_cargo" action="#" onsubmit="fill_change(event)">
               <input type="text" name="horario_envio_change" id="horario_envio_change" style="display: none;" />                       
 <div class="details">
@@ -974,16 +975,7 @@
                         <span class="details_span">Nickname do Membro</span>
                         <input id="nickname_saída" name="nickname_saída" type="text" placeholder="Nickname do membro saindo do departamento." required>                 
                     </div>
-                    <div class="input-box" style="width: 100%;" id="saida_perm">
-                        <span class="details_span">Permissão</span>
-                        <input id="permissão_saída" name="permissão_saída" type="text" placeholder="Nickname do membro que concedeu a permissão" required>                 
-                    </div>
-
-                    <div class="input-box" style="width: 100%;" id="saida_motivo">
-                      <span class="details_span">Motivo</span>
-                      <input id="motivo_saida" name="motivo_saida" type="text" placeholder="Motivo para saída." required>                 
-                  </div>
-
+                
                     <div class="check-box">
                         <input id="confirmar_saida" name="confirmar_saida" type="checkbox" value= null onchange="ValidaCheckBox('confirmar_saida')">     
                             <label id="confirmar_saida_lb" for="confirmar_saida">Li e concordo com as normas de saída descritas no Regimento Interno.</label><br>
@@ -1015,10 +1007,7 @@
                             <option value="Infração cometida">Infração cometida</option>
                         </select>
                     </div>
-                    <div class="input-box" style="width: 100%;">
-                        <span class="details_span">Permissão</span>
-                        <input name="comprovante_expulso" id="comprovante_expulso" type="text" placeholder="Adicione a permissão de um membro da intendência" required>                 
-                    </div>
+                  
                     <div class="button">
                         <input type="submit" id="enviar_expulso" value="Enviar">
                     </div>
@@ -1257,7 +1246,7 @@ function retornaCargo(value){
 
  
 function retornaMin(value){
-  var remin = ['Analista', 'Docente', 'Arquiteto', 'Secretário de Relações Sociais', 'Secretário de Educação'];
+  var remin = ['Analista', 'Docente', 'Arquiteto', 'Secretário de Relações Sociais', 'Secretário de Educação'];
     return remin[parseInt(value) - 1];
 }
  
@@ -1309,7 +1298,7 @@ function fill_entradas(e) {
       }
 
       // Construct the final text
-      var texto = "[font=Poppins][size=18][center][color=#4b2f7b][b]ENTRADA[/b][/color][/center][/size]\n[b]Nick:[/b] " + $('#novos_membros').val() + "\n[b]Cargo:[/b] " + necessidade + "[/font]";
+      var texto = "[font=Poppins][size=18][center][color=#007fc8][b]ENTRADA[/b][/color][/center][/size]\n[b]Nick:[/b] " + $('#novos_membros').val() + "\n[b]Cargo:[/b] " + necessidade + "[/font]";
 
       document.getElementById('fa-generated-message').value = texto;
       send_data('novo_membro');
@@ -1339,7 +1328,7 @@ function fill_reintegration(e) {
       $('#enviar_rein').val('Enviando... Aguarde!').prop("disabled", true);
 
       var texto =
-          "[font=Poppins][size=18][center][color=#4b2f7b][b]REINTEGRAÇÃO[/b][/color][/center][/size]\n\n" +
+          "[font=Poppins][size=18][center][color=#007fc8][b]REINTEGRAÇÃO[/b][/color][/center][/size]\n\n" +
           "[b]Nick: [/b]" + $("#nickname_reintegrado").val() + "\n" +
           "[b]Cargo:[/b] " + $("#reint_cargo").val() + "\n" + 
           "[b]Permissão:[/b] " + $("#lid_permitida").val() + "[/font]\n";
@@ -1375,7 +1364,7 @@ function fill_graduation(e){
         });
  
         var texto =
-            "[font=Lexend Deca][size=18][color=#4b2f7b][b]GRADUAÇÃO[/b][/color][/size]\n" + lista + "\n [b]Curso aplicado:[/b] " +
+            "[font=Lexend Deca][size=18][color=#007fc8][b]GRADUAÇÃO[/b][/color][/size]\n" + lista + "\n [b]Curso aplicado:[/b] " +
             $('#grad_aplicada').val() + "[/font]"
  
         $('#fa-generated-message').val(texto);
@@ -1401,7 +1390,7 @@ function fill_license(e){
     if(isValid == true){
      
   var texto =
-            "[font=Poppins][size=18][center][color=#4b2f7b][b]PEDIDO DE LICENÇA/RESERVA[/b][/center][/color][/size]\n" + "\n" +
+            "[font=Poppins][size=18][center][color=#007fc8][b]PEDIDO DE LICENÇA/RESERVA[/b][/center][/color][/size]\n" + "\n" +
             "[b]Nickname:[/b] " + $("#nickname_lic").val() + "\n" +
             "[b]Período:[/b] " + retornaData(0) + ' até ' + retornaData($('#dias_lic').val()) + "\n" +
             "[b]Permissão:[/b] " + $("#permissao_lic").val() + "[/font]"     
@@ -1428,7 +1417,7 @@ function fill_retornos(e){
     if(isValid == true){
  
         var texto =
-            "[font=Poppins][size=18][center][color=#4b2f7b][b]RETORNO DE LICENÇA/RESERVA[/b][/center][/color][/size] \n \n" +         
+            "[font=Poppins][size=18][center][color=##007fc8][b]RETORNO DE LICENÇA/RESERVA[/b][/center][/color][/size] \n \n" +         
             "[b]Nickname:[/b] " + $("#retorno_nick").val() + "\n\n" +
             "[b]✓[/b] Estou retornando da minha licença/reserva de serviço.[/font]"
         document.getElementById('fa-generated-message').value = texto;
@@ -1454,7 +1443,7 @@ function fill_change(e){
         $('#enviar_change').val('Enviando... Aguarde!').prop("disabled",true);
         if($('#novo_cargo').val() > $('#antigo_cargo').val()) {var tipo = 'PROMOÇÃO'}else{var tipo = 'REBAIXAMENTO'};
         var texto =
-            "[font=Poppins][center][size=18][color=#4b2f7b][b]" + tipo + " DE MEMBRO[/b][/center][/color][/size] \n \n" +             
+            "[font=Poppins][center][size=18][color=#007fc8][b]" + tipo + " DE MEMBRO[/b][/center][/color][/size] \n \n" +             
             "[b]Nickname:[/b] " + $('#nickname_mudança_cargo').val() + "\n" +
             "[b]Antigo cargo:[/b] " + retornaCargo($('#antigo_cargo').val()) + "\n" +
             "[b]Novo cargo:[/b] " + retornaCargo($('#novo_cargo').val()) + "\n" +
@@ -1470,32 +1459,31 @@ function fill_change(e){
     return isValid;}
  
     function fill_saida(e) {
-            e.preventDefault();
-            var isValid = true;
-            retornaDateTime('horario_envio_saida');
-
-            if ($('#confirmar_saida').is(":checked")) {
-                if ($('#nickname_saida').val() === "" || $('#permissao_saida').val() === "" || $('#motivo_saida').val() === "") {
-                    isValid = false;
-                }
-
-                if (isValid) {
-                    $('#enviar_saida').val('Enviando... Aguarde!').prop("disabled", true);
-                    var texto =
-                        "[font=Poppins][size=18][center][color=#4b2f7b][b]SAÍDA[/b][/color][/center][/size]\n" + "\n" +
-                        "[b]Nickname:[/b] " + $('#nickname_saída').val() + "\n" +
-                        "[b]Permissão:[/b] " + $('#permissão_saída').val() + "\n" +
-                        "[b]Motivo:[/b] " + $('#motivo_saida').val() + "\n" +
-                        "\n[b]✓[/b] Li e concordo com as normas de saída descritas no Código de Conduta e Ética da Comissão de Desenvolvimento Cultural.[/font]";
-                    $('#fa-generated-message').val(texto);
-                    send_data('saidas_honrosas');
-                } else {
-                    alert('Preencha todos os campos!');
-                }
-            } else {
-                alert('Você deve concordar com as normas de saída.');
-            }
-        }
+      e.preventDefault();
+      var isValid = true;
+      retornaDateTime('horario_envio_saida');
+  
+      if ($('#confirmar_saida').is(":checked")) {
+          if ($('#nickname_saida').val() === "" || $('#motivo_saida').val() === "") {
+              isValid = false;
+          }
+  
+          if (isValid) {
+              $('#enviar_saida').val('Enviando... Aguarde!').prop("disabled", true);
+              var texto =
+                  "[font=Poppins][size=18][center][color=#007fc8][b]SAÍDA[/b][/color][/center][/size]\n" + "\n" +
+                  "[b]Nickname:[/b] " + $('#nickname_saida').val() + "\n" +
+                  "[b]Motivo:[/b] " + $('#motivo_saida').val() + "\n" +
+                  "\n[b]✓[/b] Li e concordo com as normas de saída descritas no Departamento de Aplicação.[/font]";
+              $('#fa-generated-message').val(texto);
+              send_data('saidas_honrosas');
+          } else {
+              alert('Preencha todos os campos!');
+          }
+      } else {
+          alert('Você deve concordar com as normas de saída.');
+      }
+  }
 
         function ValidaCheckBox(id) {
             // Se necessário, adicione lógica para quando a checkbox for alterada
@@ -1524,10 +1512,8 @@ function fill_change(e){
                   lista_expulsos += "\n[b]Nick:[/b] " + nickname + '\n[b]Motivo:[/b] ' + $('#motivo_expulso').val();
               });
       
-              var adicional = "\n[b]Permissão:[/b] " + $('#comprovante_expulso').val() + "[/font]";
-      
-              // Construct the final text
-              var texto = "[font=Poppins][size=18][color=#4b2f7b][center][b]EXPULSÃO[/b][/color][/center][/size]" + lista_expulsos + adicional;
+              // Construct the final text without "Permissão"
+              var texto = "[font=Poppins][size=18][color=#007fc8][center][b]EXPULSÃO[/b][/color][/center][/size]" + lista_expulsos + "[/font]";
       
               $('#fa-generated-message').val(texto);
               send_data('form_expulsões');
@@ -1539,6 +1525,7 @@ function fill_change(e){
       
           return isValid;
       }
+      
       
  
 function fill_sup(e){
@@ -1559,7 +1546,7 @@ function fill_sup(e){
             });
  
         var texto =
-            "[font=Poppins][size=18][center][color=#4b2f7b][b]REMOÇÃO DA LISTAGEM[/b][/center][/color][/size]\n" +
+            "[font=Poppins][size=18][center][color=#007fc8][b]REMOÇÃO DA LISTAGEM[/b][/center][/color][/size]\n" +
             lista + "[/font]"
         document.getElementById('fa-generated-message').value = texto;
         send_data('sup_listagem');
@@ -1581,7 +1568,7 @@ function fill_changing_nickname(e){
     if(isValid == true){
         $('#enviar_nickname').val('Enviando... Aguarde!').prop("disabled",true);
         var texto =
-            "[font=Poppins][size=18][center][color=#4b2f7b][b]ALTERAÇÃO DE NICKNAME[/b][/center][/color][/size] \n \n" +             
+            "[font=Poppins][size=18][center][color=#007fc8][b]ALTERAÇÃO DE NICKNAME[/b][/center][/color][/size] \n \n" +             
             "[b]Nickname na listagem:[/b] " + $('#nickname_atual_mudança').val() + "\n" +
             "[b]Novo nickname:[/b] " + $('#nickname_novo_mudança').val() + "[/font]"
         $('#fa-generated-message').val(texto);
@@ -1606,7 +1593,7 @@ function fill_migrating(e){
     if(isValid == true){
         $('#enviar_mig').val('Enviando... Aguarde!').prop("disabled",true);
         var texto =
-            "[font=Poppins][size=15][color=#4b2f7b][b]MIGRAÇÃO DE CORPO[/b][/color][/size] \n \n" +             
+            "[font=Poppins][size=15][color=#007fc8][b]MIGRAÇÃO DE CORPO[/b][/color][/size] \n \n" +             
             "[b]Nickname:[/b] " + $('#nickname_mig').val() + "\n\n" +
             "[b]✓[/b] Afirmo estar ciente das normativas do processo de migração de corpo dispostas no Regimento Interno.[/font]"
         $('#fa-generated-message').val(texto);
@@ -1631,7 +1618,7 @@ function fill_advertencia(e){
  
     if(isValid == true){
       var texto =
-            "[font=Poppins][size=18][center][color=#4b2f7b][b]ADVERTÊNCIA[/b][/center][/color][/size]\n" + "\n" +
+            "[font=Poppins][size=18][center][color=#007fc8][b]ADVERTÊNCIA INTERNA[/b][/center][/color][/size]\n" + "\n" +
             "[b]Nickname:[/b] " + $("#nick_adv").val() + "\n" +
             "[b]Motivo:[/b] " + $("#adv_motivo").val() + "\n" +
             "[b]Término:[/b] " + retornaData(30) + "\n" +
@@ -1658,7 +1645,7 @@ function fill_min(e){
     if(isValid == true && $('#min_novo').val() != $('#min_atual').val()){
               $('#enviar_realocação').val('Enviando... Aguarde!').prop("disabled",true);
       var texto =
-            "[font=Poppins][size=18][center][color=#4b2f7b][b]REALOCAÇÃO[/b][/center][/color][/size]\n\n" +
+            "[font=Poppins][size=18][center][color=#007fc8][b]REALOCAÇÃO[/b][/center][/color][/size]\n\n" +
             "[b]Nickname:[/b] " + $("#re_nick").val() + "\n" +
             "[b]Cargo atual:[/b] " + retornaMin($('#min_atual').val()) + "\n" +
             "[b]Novo cargo:[/b] " + retornaMin($('#min_novo').val()) + "[/font]";
@@ -1724,14 +1711,14 @@ $("#btn_sub").click(function(){
             $(this).find('button[type="submit"]').text('Postando...');
             setTimeout(function () {
                 $.post('/post', {
-                    t: 36345,
+                    t: 33559,
                         message: $('#fa-generated-message').val().trim(),
                         mode: 'reply',
                         tid: $('[name="tid"]:first').val(),
                         post: 1,
                 }).done(function () {
                         alert('Você será redirecionado para o tópico. Não esqueça de conferir sua postagem!');
-                location.href = 'http://' + location.host + '/t36345-cdc-requerimentos-de-membros';
+                location.href = 'http://' + location.host + '/t33559-da-requerimentos-de-membros';
                     }).fail(function () {
                         alert('Houve um erro! Tente novamente!');
                     });
