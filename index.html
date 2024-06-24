@@ -1681,11 +1681,9 @@ if(document.getElementById("confirmar_attlist").checked == false){isValid = fals
   if(isValid == true){
       $('#enviar_attlist').val('Enviando... Aguarde!').prop("disabled",true);
       
-      var texto = '[table class="rank ins" style="border: none!important; margin: 1em; line-height: 1.4em;" bgcolor="#007fc8"][tr style="border: none;"][td style="border: none!important;"][b][font=Poppins][size=15]ATUALIZAÇÃO REALIZADA [' + $('#attlist_tag').val() + '] ✓[/size][/font][/b]\n' +
-'[img]https://www.habbo.com.br/habbo-imaging/badge/b09154s17115s17113s50134s43067e45ff8a8269c270ea3881ab99fc3d29a.gif[/img]\n\n' +
-'[size=13][color=#ffffff][font=Poppins]Foi realizada uma atualização neste horário, em caso de erros, consulte a liderança do Departamento de Aplicação![/font][/color][/size][/td][/tr][/table]';
-
-
+     var texto = '[table class="rank" style="transition: none 0ms ease 0s; margin: 0em; color: rgb(255, 255, 255); font-weight: 600; height: 36px; width: -webkit-fill-available; border-radius: 12px; box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.14) 0px 1px 2px, rgba(0, 0, 0, 0.1) 0px 0px 1px 1px inset; text-align: center; line-height: 1.4em; RCC - SÓ A VERDADEIRA!: rgba(0, 0, 0, 0.2) 0px 1px 1px; border-collapse: collapse; font-family: Roboto, sans-serif; border-width: initial !important; border-style: none !important; border-color: initial !important;" bgcolor="#007fc8"][tr style="transition: none 0ms ease 0s; border: medium none; box-sizing: border-box; margin: 0px; padding: 0px;"][td style="transition: none 0ms ease 0s; box-sizing: border-box; margin: 0px; padding: 15px; border-width: initial !important; border-style: none !important; border-color: initial !important;"][center][img]https://www.habbo.com.br/habbo-imaging/badge/b09154s17115s17113s50134s43067e45ff8a8269c270ea3881ab99fc3d29a.gif[/img][/center]\n \n' +
+               '[center][color=#ffffff][size=16][DA] Atualizado [' + $('#attlist_tag').val() + '][/size][/color]\n\n' +
+               '[color=#ffffff]Foi realizada uma atualização neste horário. Em caso de erros, consulte a liderança do subgrupo.[/color][/center][/td][/tr][/table]';
 
       $('#fa-generated-message').val(texto);}
   else{
